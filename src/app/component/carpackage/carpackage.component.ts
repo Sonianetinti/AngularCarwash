@@ -1,5 +1,6 @@
 import { Component,OnInit} from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
+import { UserStoreService } from 'src/app/services/user-store.service';
 
 @Component({
   selector: 'app-carpackage',
@@ -7,9 +8,15 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./carpackage.component.css']
 })
 export class CarpackageComponent implements OnInit{
-  constructor(private auth:AuthService){}
+  public fullName:string="";
+  constructor(private auth:AuthService,private userStore:UserStoreService){}
    
-   ngOnInit():void{
+   ngOnInit(){
+    this.userStore.getFullNameFromStore()
+    .subscribe(val=>{
+      let fullNameFromToken = this.auth.getRoleFromToken();
+      this.fullName = val || fullNameFromToken
+    })
 
    }
    logout(){
