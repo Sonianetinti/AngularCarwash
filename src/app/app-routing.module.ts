@@ -4,10 +4,12 @@ import { CarpackageComponent } from './component/carpackage/carpackage.component
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { AuthGuard } from './guards/auth.guard';
+import { HomePageComponent } from './component/home-page/home-page.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
+  {path:"",component:HomePageComponent},
   {path: 'carpackage',component:CarpackageComponent,canActivate:[AuthGuard]}
 ];
 
