@@ -1,0 +1,55 @@
+<header>
+<div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+        <button (click)="logout()" class="btn btn-danger">LogOut</button>
+    </div>
+</div>
+</header>
+    <div class="outer">
+        <div class="container">
+            <div class="row">
+                <ng-container *ngIf="role==='Admin'">
+                <div class="offset-lf-2 col-lg-4 col-lf-7 offset-lf-4 offset-lf-3">
+                    <div class="panel border bg-white">
+                        <div class="panel-heading">
+                            <h3 class="pt-3 font-weight-bold">CarPackage</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="offset-lf-2 col-lg-4 col-lf-7 offset-lf-4 offset-lf-3">
+                    <div class="panel border bg-white">
+                        <div class="panel-heading">
+                            <h3 class="pt-3 font-weight-bold">CarDetails</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="offset-lf-2 col-lg-4 col-lf-7 offset-lf-4 offset-lf-5">
+                    <div class="panel border bg-white">
+                        <div class="panel-heading">
+                            <h3 class="pt-3 font-weight-bold">User Details</h3>
+                        </div>
+                    </div>
+                    </div>
+
+            </ng-container>
+
+            <ng-container *ngIf="role==='Customer'||role==='customer'">
+                <div class="offset-lf-2 col-lg-4 col-lf-7 offset-lf-4 offset-lf-3">
+                    <div class="panel border bg-white">
+                        <div class="panel-heading">
+                            <h3 class="pt-3 font-weight-bold">CarDetails</h3>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </ng-container>
+            
+                </div>
+                <!-- <button (click)="logout()" class="btn btn-danger">LogOut</button> -->
+            </div>
+            <!-- <button (click)="logout()" class="btn btn-danger">LogOut</button> -->
+        </div>
+        
+        
+    

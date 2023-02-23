@@ -12,6 +12,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Token } from '@angular/compiler';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { HomePageComponent } from './component/home-page/home-page.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomePageComponent } from './component/home-page/home-page.component';
     LoginComponent,
     RegisterComponent,
     CarpackageComponent,
-    HomePageComponent
+    HomePageComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

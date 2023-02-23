@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit{
             const tokenPayload = this.auth.decodedToken();
             this.userStore.setFulNameForStore(tokenPayload.name);
             this.userStore.setRoleForStore(tokenPayload.role)
-            this.router.navigate(['carpackage']);
+            this.router.navigate(['dashboard']);
 
           })
           ,error:(err=>{
