@@ -1,1 +1,31 @@
-<p>car works!</p>
+<div class="container">
+    <h1>CAR DETAILS</h1>
+    <div class="car-container">
+        <div class="car-form">
+            <form #form="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="">Car Model</label>
+                    <input type="text" name="model" [(ngModel)]="ca.model">
+                </div>
+                <div class="form-group">
+                    <label for="">Status</label>
+                    <input type="text" name="status" [(ngModel)]="ca.status">
+                </div>
+                <div class="form-group">
+                    <button>Save</button>
+                </div>
+            </form>
+        </div>
+        <div class="car-grid">
+            <div class="car-row" *ngFor="let car of cars">
+                <div class="car-row-details">
+                    <span>{{car.model}}</span>
+                    <span>{{car.status}}</span>
+                </div>
+                <div class="car-row-action">
+                    <a><i class="fa-solid fa-trash-can"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

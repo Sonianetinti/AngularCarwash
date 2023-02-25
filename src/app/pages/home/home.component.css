@@ -1,18 +1,21 @@
 .banner {
-    background-image: url(src\assets\Images\register.jpg);
+    background-image: url(src\assets\Images\home.jpg);
     height: 800px;
     background-position: center top;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .content {
-    top: 30%;
+    /* top: 30%;
     left: 20%;
-    position: absolute;
+    position: absolute; */
 }
 
 .content h1 {
-    color: rgb(190, 76, 76);
+    color: rgb(76, 190, 82);
     font-size: 70px;
     font-weight: bold;
 }
@@ -28,4 +31,10 @@
 .content a:hover {
     background-color: var(--primary-color);
     color: #fff;
+}
+.link{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
 }
