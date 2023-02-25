@@ -1,0 +1,31 @@
+.banner {
+    background-image: url(src\assets\Images\register.jpg);
+    height: 800px;
+    background-position: center top;
+    background-size: cover;
+}
+
+.content {
+    top: 30%;
+    left: 20%;
+    position: absolute;
+}
+
+.content h1 {
+    color: rgb(190, 76, 76);
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.content a {
+    text-decoration: none;
+    background-color: #fff;
+    color: var(--primary-color);
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+.content a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}

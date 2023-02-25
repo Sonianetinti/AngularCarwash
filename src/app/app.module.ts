@@ -13,6 +13,14 @@ import { Token } from '@angular/compiler';
 import { TokenInterceptor } from './interceptor/token.interceptor';
 import { HomePageComponent } from './component/home-page/home-page.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { CarComponent } from './component/car/car.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactusComponent } from './pages/contactus/contactus.component';
+import { FooterComponent } from './sharepage/footer/footer.component';
+import { NavbarComponent } from './sharepage/navbar/navbar.component';
+
+
 
 @NgModule({
   declarations: [
@@ -20,8 +28,15 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
     LoginComponent,
     RegisterComponent,
     CarpackageComponent,
-    HomePageComponent,
-    DashboardComponent
+    DashboardComponent,
+    CarComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactusComponent,
+    FooterComponent,
+    NavbarComponent,
+   
+    
   ],
   imports: [
     BrowserModule,

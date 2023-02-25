@@ -1,0 +1,19 @@
+.banner {
+    /* background-image: url(src\assets\Images\image2.jpg); */
+    height: 800px;
+    background-position: center top;
+    background-size: cover;
+}
+
+.content {
+    top: 30%;
+    left: 20%;
+    position: absolute;
+    font-size: 250%;
+}
+
+.content h1 {
+    color: black;
+    font-size: 50px;
+    font-weight: bold;
+}
