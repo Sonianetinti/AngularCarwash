@@ -50,12 +50,14 @@ export class RegisterComponent implements OnInit {
 
           }
           ,error:(err=>{
+            console.log("error",err);
             alert("error"+err?.error.message)
           })
         })
       }else{
         this.validateAllFormFields(this.RegisterForm)
         alert("Your form is invalid")
+        console.log("success");
         //logic for throwing error
         
       }

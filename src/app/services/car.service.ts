@@ -1,24 +1,38 @@
 import { HttpClient } from '@angular/common/http';
+import { DomElementSchemaRegistry } from '@angular/compiler';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable } from 'rxjs';
 import { CarModel } from '../models/car.model';
 
-
+import { HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
 
-  baseUrl='https://localhost:44308/api/Car/';
-  constructor(private http:HttpClient) { }
+  readonly rootUrl = 'https://localhost:44308/api/Car/';
+  constructor(private http: HttpClient) {}
 
-  //get all cardetails
-  getAllCars():Observable<CarModel[]>{
-    return this.http.get<CarModel[]>(this.baseUrl);
+  GetCarModels(): Observable<CarModel[]> {
+    return this.http.get<CarModel[]>(this.rootUrl);
   }
 
-  addCar(ca:CarModel):Observable<CarModel>{
-    ca.id='00000000-0000-0000-0000-000000000000';
-    return this.http.post<CarModel>(this.baseUrl,ca);
+  AddCarModels(CarModel: CarModel): Observable<CarModel> {
+    return this.http.post<CarModel>(this.rootUrl, CarModel);
+  }
+
+  DeleteCarModel(id: number): Observable<CarModel> {
+    return this.http.delete<CarModel>(this.rootUrl + id);
+  }
+
+  UpdateCarModel(id: number, CarModel: CarModel): Observable<CarModel> {
+    return this.http.put<CarModel>(this.rootUrl+ id, CarModel);
+  }
+
+  GetCarModelById(id: number): Observable<CarModel> {
+    return this.http.get<CarModel>(this.rootUrl + '/api/Car' + id);
   }
 }
+
+
+ 

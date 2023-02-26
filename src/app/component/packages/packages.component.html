@@ -2,7 +2,7 @@
     <div class="Container" style="color:whitesmoke; background-color: #0bc1f9; padding: 10px;">
       <div class="row">
         <div class="col-md-10">
-          <h1 style="color: black; text-align: center; margin-left: 30px;">Car Details</h1>
+          <h1 style="color: black; text-align: center; margin-left: 30px;">Packages</h1>
         </div>
         <div class="col-md-2">
           <button type="button" [routerLink]="['/home']" style="padding: 5px; width:80px; margin: 10px;"
@@ -25,17 +25,17 @@
             <table id="elementsContainer" class="col-md-8">
               <tr>
                 <td>
-                  <input type="text" placeholder="Search Car" class="Search">
+                  <input type="text" placeholder="Search Package" class="Search">
                 </td>
                 <td>
                   <a href="#"><i class="fa-solid fa-magnifying-glass-plus" id="material-icons"></i></a>
                 </td>
               </tr>
             </table>
-            <div id="addCar" class="col-md-2">
+            <div id="addpackage" class="col-md-2">
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                AddCar
+                Addpackage
               </button>
   
               <!-- Modal -->
@@ -44,7 +44,7 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Add Car</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Add Package</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -54,14 +54,20 @@
   
                       <form method="post" #form="ngForm" (ngSubmit)="onSubmit()">
                         <div class="    form-group">
-                          <label for="validationCustom01" class="form-label"> Car Model</label>
-                          <input type="text" class="form-control" name="model" [(ngModel)]="carL.model" required>
+                          <label for="validationCustom01" class="form-label">Name</label>
+                          <input type="text" class="form-control" name="name" [(ngModel)]="packageL.name" required>
   
                         </div>
-
+  
+                        <div class="form-group">
+                          <label for="validationCustom05" class="form-label">price</label>
+                          <input type="text" class="form-control" name="price" [(ngModel)]="packageL.price" required>
+  
+                        </div>
+  
                         <div class="form-group">
                           <label for="validationCustom05" class="form-label">Status </label>
-                          <input type="text" class="form-control" name="status" [(ngModel)]="carL.status"
+                          <input type="text" class="form-control" name="status" [(ngModel)]="packageL.status"
                             required>
   
                         </div>
@@ -69,7 +75,7 @@
                         <div class="modal-footer">
   
                           <button type="submit" class="btn btn-primary" [disabled]="!form.valid"
-                            [routerLink]="['/car']">Save changes</button>
+                            [routerLink]="['/packages']">Save changes</button>
                         </div>
                       </form>
                     </div>
@@ -85,30 +91,38 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Update Car</h5>
+                      <h5 class="modal-title" id="exampleModalLabel">Update Package</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
   
-                      <form method="post" #form="ngForm" (ngSubmit)="UpdateCar(carL)">
+                      <form method="post" #form="ngForm" (ngSubmit)="UpdatePackage(packageL)">
   
                         <div class="form-group">
-                          <label for="validationCustom02" class="form-label">Car Id</label>
-                          <input type="text" class="form-control" name="id" [(ngModel)]="carL.id"
-                            value="{{carL.id}}">
+                          <label for="validationCustom02" class="form-label"> Id</label>
+                          <input type="text" class="form-control" name="id" [(ngModel)]="packageL.id"
+                            value="{{packageL.id}}">
                         </div>
   
                         <div class="    form-group">
-                          <label for="validationCustom01" class="form-label">Model</label>
-                          <input type="text" class="form-control" name="name" [(ngModel)]="carL.model"
-                            value="{{carL.model}}">
+                          <label for="validationCustom01" class="form-label">Name</label>
+                          <input type="text" class="form-control" name="name" [(ngModel)]="packageL.name"
+                            value="{{packageL.name}}">
+  
+                        </div>
+
+  
+                        <div class=" form-group">
+                          <label for="validationCustom05" class="form-label">price</label>
+                          <input type="text" class="form-control" name="price" [(ngModel)]="packageL.price"
+                            [(ngModel)]="packageL.price">
   
                         </div>
   
                         <div class="form-group">
                           <label for="validationCustom05" class="form-label">Status</label>
-                          <input type="text" class="form-control" name="status" [(ngModel)]="carL.status"
-                            value="carL.status">
+                          <input type="text" class="form-control" name="status" [(ngModel)]="packageL.status"
+                            value="packageL.status">
   
                         </div>
   
@@ -133,7 +147,7 @@
           </div>
           <br>
   
-          <div class="Carstable">
+          <div class="packagestable">
             <table class="table table-bordered">
               <thead>
                 <tr>
@@ -141,7 +155,10 @@
                     <h4>Id</h4>
                   </th>
                   <th>
-                    <h4>Car Model</h4>
+                    <h4>Package Name</h4>
+                  </th>
+                  <th>
+                    <h4>Price</h4>
                   </th>
                   <th>
                     <h4>Status</h4>
@@ -153,21 +170,24 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let cars of Cars">
+                <tr *ngFor="let pac of packages">
                   <td>
-                    {{cars.id}}
+                    {{pac.id}}
                   </td>
                   <td>
-                    {{cars.model}}
+                    {{pac.name}}
                   </td>
                   <td>
-                    {{cars.status}}
+                    {{pac.price}}
+                  </td>
+                  <td>
+                    {{pac.status}}
                   </td>
                   <td>
                     <button type="button" id=edit data-bs-toggle="modal" data-bs-target="#exampleModel"
-                      (click)="SetCarValues(cars)"><i class="fa-solid fa-pen-to-square"></i></button>
+                      (click)="SetPackageValues(pac)"><i class="fa-solid fa-pen-to-square"></i></button>
   
-                    <button type="button" id=delete (click)="DeleteCar(cars)"><i
+                    <button type="button" id=delete (click)="DeletePackage(pac)"><i
                         class="fa-solid fa-person-circle-minus"></i></button>
                   </td>
   

@@ -31,7 +31,9 @@ export class TokenInterceptor implements HttpInterceptor {
             this.router.navigate(['login'])
           }
         }
-        return throwError(()=> new Error("some error occured"))
+        console.log(err);
+        // return err;
+        return throwError(()=>(err))
       })
     )
     };

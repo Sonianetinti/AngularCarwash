@@ -6,8 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
-
-import { CarpackageComponent } from './component/carpackage/carpackage.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Token } from '@angular/compiler';
 import { TokenInterceptor } from './interceptor/token.interceptor';
@@ -18,6 +16,8 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 import { FooterComponent } from './sharepage/footer/footer.component';
 import { NavbarComponent } from './sharepage/navbar/navbar.component';
 import { CarComponent } from './component/car/car.component';
+import { PackagesComponent } from './component/packages/packages.component';
+
 
 
 
@@ -26,7 +26,6 @@ import { CarComponent } from './component/car/car.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    CarpackageComponent,
     DashboardComponent,
     HomeComponent,
     AboutComponent,
@@ -34,6 +33,8 @@ import { CarComponent } from './component/car/car.component';
     FooterComponent,
     NavbarComponent,
     CarComponent,
+    PackagesComponent,
+
    
     
   ],

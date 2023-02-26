@@ -70,7 +70,18 @@ img{
     border-radius:50%;
     position:relative;
 }
+
+
 .link{
     text-align: center;
     position:relative;
 }
+
+
+.card-group {
+    gap: 2rem;
+  }
+  
+  .card-group .card {
+      border-radius: 0.5rem;
+  }

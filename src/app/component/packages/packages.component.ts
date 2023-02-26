@@ -1,55 +1,57 @@
-import { Component ,OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CarModel } from 'src/app/models/car.model';
-import { CarService } from 'src/app/services/car.service';
+import { PackageModel } from 'src/app/models/packagedetails.model';
+import { PackageserviceService } from 'src/app/services/packageservice.service';
 
 @Component({
-  selector: 'app-car',
-  templateUrl: './car.component.html',
-  styleUrls: ['./car.component.css']
+  selector: 'app-packages',
+  templateUrl: './packages.component.html',
+  styleUrls: ['./packages.component.css']
 })
-export class CarComponent implements OnInit {
-  public Cars:CarModel[] = [];
+export class PackagesComponent {
+  public packages:PackageModel[] = [];
 
-  carL: CarModel = {
+  packageL: PackageModel = {
     id:0,
-    model:'',
+    name:'',
+    price:'',
     status:'',
   };
 
   constructor(
-    private car:CarService ,
+    private pack:PackageserviceService ,
     private router: Router,
   ) {}
 
   ngOnInit(): void {
-    this.getAllCars();
+    this.getAllPackages();
     //console.log(this.drugs);
   }
 
   //set values to the drug
-  SetCarValues(car: CarModel) {
-    (this.carL.id = car.id),
-      (this.carL.model = car.model),
-      (this.carL.status = car.status);
+  SetPackageValues(pack: PackageModel) {
+    (this.packageL.id = pack.id),
+      (this.packageL.name = pack.name),
+      (this.packageL.price = pack.price),
+      (this.packageL.status = pack.status);
   }
 
   //Method to display all the drugs
-  getAllCars() {
-    this.car.GetCarModels().subscribe((response) => {
-      this.Cars = response;
+  getAllPackages() {
+    this.pack.GetPackageModels().subscribe((response) => {
+      this.packages = response;
       //console.log(this.drugs);
     });
   }
 
   //Method to add drug
   onSubmit() {
-    console.log(this.carL);
-    this.car.AddCarModels(this.carL).subscribe((Response) => {
+    console.log(this.packageL);
+    this.pack.AddPackageModels(this.packageL).subscribe((Response) => {
       console.log(Response);
     });
     // this.toastr.success('Drug added');
-    this.getAllCars();
+    this.getAllPackages();
 
     //function to delay the code for 3 seconds to show the message
     function delay(time: any) {
@@ -62,10 +64,10 @@ export class CarComponent implements OnInit {
   }
 
   // Method to delete a drug.
-  DeleteCar(car: CarModel) { 
-    this.car.DeleteCarModel(car.id).subscribe((data) => {
+  DeletePackage(pack: PackageModel) { 
+    this.pack.DeletePackageModel(pack.id).subscribe((data) => {
       //console.log(data);
-      this.getAllCars();
+      this.getAllPackages();
     });
     // this.toastr.success('Drug was deleted');
 
@@ -79,8 +81,8 @@ export class CarComponent implements OnInit {
     location.reload();
   }
 
-  UpdateCar(carcord: CarModel) {
-    this.car.UpdateCarModel(carcord.id, carcord).subscribe((data) => {
+  UpdatePackage(packagerecord: PackageModel) {
+    this.pack.UpdatePackageModel(packagerecord.id, packagerecord).subscribe((data) => {
       console.log(data);
     });
 
