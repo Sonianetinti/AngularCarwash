@@ -1,5 +1,5 @@
 .banner {
-    background-image: url(src\assets\Images\home.jpg);
+    background-image: url(../../../assets/Images/home.jpg);
     height: 800px;
     background-position: center top;
     background-size: cover;
@@ -8,14 +8,14 @@
     justify-content: center;
 }
 
-.content {
-    /* top: 30%;
+/* .content {
+    top: 30%;
     left: 20%;
-    position: absolute; */
-}
+    position: absolute;
+} */
 
 .content h1 {
-    color: rgb(76, 190, 82);
+    color: rgb(9, 8, 11);
     font-size: 70px;
     font-weight: bold;
 }

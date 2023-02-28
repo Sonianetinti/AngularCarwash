@@ -4,6 +4,11 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(to top,#0aec3b 50%, #cbe669 90%)no-repeat;
+    background-image: url('../../../assets/Images/about.jpg');
+    background-position: center top;
+    background-size: cover;
+    
+
 }
 .panel-heading{
     text-align:center;

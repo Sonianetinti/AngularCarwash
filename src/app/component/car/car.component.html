@@ -5,10 +5,10 @@
           <h1 style="color: black; text-align: center; margin-left: 30px;">Car Details</h1>
         </div>
         <div class="col-md-2">
-          <button type="button" [routerLink]="['/home']" style="padding: 5px; width:80px; margin: 10px;"
+          <button type="button" [routerLink]="['']" style="padding: 5px; width:80px; margin: 10px;"
             class="btn btn-primary" (click)="LogOut()">Logout</button>
-          <!-- <button type="button" [routerLink]="['/admin']" style="padding: 5px; width:80px; margin: 10px;"
-            class="btn btn-primary">Back</button> -->
+          <button type="button" [routerLink]="['/login']" style="padding: 5px; width:80px; margin: 10px;"
+            class="btn btn-primary">Back</button>
   
         </div>
       </div>
@@ -22,16 +22,6 @@
       <div class="container">
         <div class="row content">
           <div class="boxContainer">
-            <table id="elementsContainer" class="col-md-8">
-              <tr>
-                <td>
-                  <input type="text" placeholder="Search Car" class="Search">
-                </td>
-                <td>
-                  <a href="#"><i class="fa-solid fa-magnifying-glass-plus" id="material-icons"></i></a>
-                </td>
-              </tr>
-            </table>
             <div id="addCar" class="col-md-2">
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -133,8 +123,8 @@
           </div>
           <br>
   
-          <div class="Carstable">
-            <table class="table table-bordered">
+          <div class="Carstable bg-success" >
+            <table class="table table-bordered text-white">
               <thead>
                 <tr>
                   <th>
@@ -164,10 +154,10 @@
                     {{cars.status}}
                   </td>
                   <td>
-                    <button type="button" id=edit data-bs-toggle="modal" data-bs-target="#exampleModel"
+                    <button type="button" class="btn btn-primary"  id=edit data-bs-toggle="modal" data-bs-target="#exampleModel"
                       (click)="SetCarValues(cars)"><i class="fa-solid fa-pen-to-square"></i></button>
   
-                    <button type="button" id=delete (click)="DeleteCar(cars)"><i
+                    <button type="button" class="btn btn-danger"  id=delete (click)="DeleteCar(cars)"><i
                         class="fa-solid fa-person-circle-minus"></i></button>
                   </td>
   
@@ -181,14 +171,5 @@
       </div>
   
     </div>
-    <div class="Container" id="footer"
-      style="color:rgb(0, 0, 0); text-align: center;  background-color: #0bc1f9; padding: 10px;">
-      <footer>
-        <span>
-          <strong>
-            On demand car wash System -
-          </strong>
-        </span>
-      </footer>
-    </div>
+    
   </div>

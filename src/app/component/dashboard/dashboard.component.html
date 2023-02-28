@@ -7,34 +7,35 @@
 </header>
 <div class="outer">
     <div class="container">
-        <div class="card-group">
-            <ng-container *ngIf="role==='Admin'">
-                <div class="card">
+        <div class="card-group ">
+            <ng-container *ngIf="role==='Admin' || role==='admin'">
+                <div class="card bg-info">
                     <div class="card-body text-center" >
                         <h2 class="card-title">Car Package</h2>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="packages"class="text-muted">Get Started</a>
+                        <a href="packages"  class="text-dark ">Get Started</a>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card bg-info">
                     <div class="card-body text-center">
                         <h2 class="card-title">Car Details</h2>
                         
-                            <i class="fa-duotone fa-car"></i>
+                            
                         
                     </div>
                     <div class="card-footer text-center">
-                        <a href="car"  class="text-muted">Get Started</a>
+                        <a href="car"  class="text-dark">Get Started</a>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card bg-info">
                     <div class="card-body text-center">
                         <h2 class="card-title">User Details</h2>
                         
                     </div>
                     <div class="card-footer text-center">
-                        <a class="text-muted">Get Started</a>
+                        <a href="userdetails"  class="text-dark">Get Started</a>
+                        <!-- <a class="text-dark">Get Started</a> -->
                     </div>
                 </div>
             </ng-container>
@@ -43,10 +44,11 @@
 
                 <div class="card">
                     <div class="card-body text-center">
-                        <h5 class="card-title">User Details</h5>
+                        <h5 class="card-title">Car Packages</h5>
                     </div>
                     <div class="card-footer text-center">
-                        <small class="text-muted">Get Started</small>
+                        <a href="package"  class="text-muted">Get Started</a>
+                        <!-- <a class="text-muted">Get Started</a> -->
                     </div>
                 </div>
             </ng-container>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { PackageModel } from 'src/app/models/packagedetails.model';
 import { PackageserviceService } from 'src/app/services/packageservice.service';
@@ -8,7 +8,7 @@ import { PackageserviceService } from 'src/app/services/packageservice.service';
   templateUrl: './packages.component.html',
   styleUrls: ['./packages.component.css']
 })
-export class PackagesComponent {
+export class PackagesComponent implements OnInit{
   public packages:PackageModel[] = [];
 
   packageL: PackageModel = {

@@ -17,6 +17,8 @@ import { FooterComponent } from './sharepage/footer/footer.component';
 import { NavbarComponent } from './sharepage/navbar/navbar.component';
 import { CarComponent } from './component/car/car.component';
 import { PackagesComponent } from './component/packages/packages.component';
+import { UserdetailsComponent } from './component/userdetails/userdetails.component';
+import { PackageComponent } from './component/package/package.component';
 
 
 
@@ -34,6 +36,8 @@ import { PackagesComponent } from './component/packages/packages.component';
     NavbarComponent,
     CarComponent,
     PackagesComponent,
+    UserdetailsComponent,
+    PackageComponent,
 
    
     

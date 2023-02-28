@@ -9,6 +9,8 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CarComponent } from './component/car/car.component';
 import { PackagesComponent } from './component/packages/packages.component';
+import { UserdetailsComponent } from './component/userdetails/userdetails.component';
+import { PackageComponent } from './component/package/package.component';
 
 
 
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path:"contactus",component:ContactusComponent},
   {path:"",component:HomeComponent},
   {path:"car",component:CarComponent},
+  {path:"userdetails",component:UserdetailsComponent},
+  {path:"package",component:PackageComponent},
   {path:"packages",component:PackagesComponent,canActivate:[AuthGuard]},
 
 ];
