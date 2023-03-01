@@ -46,7 +46,7 @@ export class PackagesComponent implements OnInit{
 
   //Method to add drug
   onSubmit() {
-    console.log(this.packageL);
+    console.log('ADD PACKAGE',this.packageL);
     this.pack.AddPackageModels(this.packageL).subscribe((Response) => {
       console.log(Response);
     });
@@ -54,11 +54,13 @@ export class PackagesComponent implements OnInit{
     this.getAllPackages();
 
     //function to delay the code for 3 seconds to show the message
-    function delay(time: any) {
-      return new Promise((resolve) => setTimeout(resolve, time));
-    }
+    // function delay(time: any) {
+    //   return new Promise((resolve) => setTimeout(resolve, time));
+    // }
 
-    delay(4000).then(() => console.log('ran after 1 second1 passed'));
+    // delay(4000).then(() => console.log('ran after 1 second1 passed'));
+
+    window.location.href = '/packages'
 
     location.reload();
   }

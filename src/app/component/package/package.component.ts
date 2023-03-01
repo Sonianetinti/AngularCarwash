@@ -48,6 +48,10 @@ export class PackageComponent {
   LogOut() {
     localStorage.removeItem('');
   }
+
+  select(id:number){
+    this.router.navigate(['add-order',id])
+  }
 }
 
 

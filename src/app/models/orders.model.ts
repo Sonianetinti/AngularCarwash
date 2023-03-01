@@ -3,8 +3,8 @@ export interface OrderModel{
     washingInstructions:string;
     date:string;
     status:string;
-    packageName:string;
-    description:string;
+    packageName: string;
+    name: string;
     price:number;
     city:string;
     pincode:number;

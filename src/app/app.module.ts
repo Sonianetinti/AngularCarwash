@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,8 +22,9 @@ import { UserdetailsComponent } from './component/userdetails/userdetails.compon
 import { PackageComponent } from './component/package/package.component';
 import { CardetilsComponent } from './component/cardetils/cardetils.component';
 import { OrdersComponent } from './component/orders/orders.component';
-import { OrderdetailsComponent } from './component/orderdetails/orderdetails.component';
+import { AddOrderComponent } from './component/add-order/add-order.component';
 
+import { ToastrModule } from 'ngx-toastr';
 
 
 
@@ -48,23 +50,19 @@ import { OrderdetailsComponent } from './component/orderdetails/orderdetails.com
     PackageComponent,
     CardetilsComponent,
     OrdersComponent,
-    OrderdetailsComponent,
-   
-   
-    
-
-   
-    
+    AddOrderComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot()
   ],
   providers: [{
-    provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true
+    provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true
   }],
   bootstrap: [AppComponent]
 })

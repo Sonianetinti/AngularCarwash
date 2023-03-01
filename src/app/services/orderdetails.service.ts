@@ -7,8 +7,7 @@ import { OrderModel } from '../models/orders.model';
   providedIn: 'root'
 })
 export class OrderdetailsService {
-
-  readonly rootUrl = 'https://localhost:44308/api/Order';
+  readonly rootUrl = 'https://localhost:44308/api/Order/';
   constructor(private http: HttpClient) {}
 
   GetOrderModels(): Observable<OrderModel[]> {
@@ -16,8 +15,8 @@ export class OrderdetailsService {
   }
 
   AddOrderModels(OrderModel: OrderModel): Observable<OrderModel> {
-    return this.http.post<OrderModel>(this.rootUrl, OrderModel);
-  }
+     return this.http.post<OrderModel>(this.rootUrl, OrderModel);
+   }
 
   // DeleteOrderModel(id: number): Observable<OrderModel> {
   //   return this.http.delete<OrderModel>(this.rootUrl + id);
@@ -31,6 +30,3 @@ export class OrderdetailsService {
   //   return this.http.get<OrderModel>(this.rootUrl + '/api/Order' + id);
   // }
 }
-
-
-

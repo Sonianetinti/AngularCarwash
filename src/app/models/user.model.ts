@@ -4,8 +4,8 @@ export interface UserModel{
     lastName:string;
     phoneNo:number;
     email:string;
-    // password:string;
-    // confirmPassword:string;
+    password:string;
+    confirmPassword:string;
     address:string;
     role:string;
     status:string;

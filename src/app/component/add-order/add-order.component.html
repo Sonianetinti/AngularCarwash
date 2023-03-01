@@ -1,0 +1,247 @@
+<div style="overflow: hidden;">
+  <div class="Container" style="color:whitesmoke; background-color: #0bc1f9; padding: 10px;">
+    <div class="row">
+      <div class="col-md-10">
+        <h1 style="color: black; text-align: center; margin-left: 30px;">Order details</h1>
+      </div>
+      <div class="col-md-2">
+        <button type="button" [routerLink]="['']" style="padding: 5px; width:80px; margin: 10px;"
+          class="btn btn-primary" (click)="LogOut()">Logout</button>
+        <button type="button" [routerLink]="['/dashboard']" style="padding: 5px; width:80px; margin: 10px;"
+          class="btn btn-primary">Back</button>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="rowcontent" style="padding-top: 2%;">
+    <div class="container">
+      <div class="row content">
+        <div class="boxContainer">
+          <div id="addpackage" class="col-md-2">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              AddOrder
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Order</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+
+
+
+
+                    <form method="post" #form="ngForm" (ngSubmit)="onSubmit()">
+
+                      <div class="    form-group">
+                        <label for="validationCustom01" class="form-label">washing Instructions</label>
+                        <input type="text" class="form-control" id="washingInstructions" name="washingInstructions"
+                          [(ngModel)]="orderL.washingInstructions" required>
+
+                      </div>
+
+                      <div class="form-group">
+                        <label for="validationCustom05" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="date" name="date" [(ngModel)]="orderL.date"
+                          required>
+
+                      </div>
+
+                      <div class="form-group">
+                        <label for="validationCustom05" class="form-label">Status </label>
+                        <input [disabled]="true" type="text" class="form-control" id="staus" name="status"
+                          [(ngModel)]="orderL.status" required>
+
+                      </div>
+
+
+
+                      <div class="form-group">
+                        <label for="validationCustom05" class="form-label">Package Name</label>
+                        <input [disabled]="true" type="text" class="form-control" id="name" name="name"
+                          [(ngModel)]="orderL.name" required>
+                      </div>
+
+
+                      <div class="form-group">
+                        <label for="validationCustom05" class="form-label">Price</label>
+                        <input [disabled]="true" type="text" class="form-control" id="price" name="price"
+                          [(ngModel)]="orderL.price" required>
+
+                      </div>
+
+                      <div class="form-group">
+                        <label for="validationCustom05" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" name="city" [(ngModel)]="orderL.city"
+                          required>
+
+                      </div>
+
+                      <div class="form-group">
+                        <label for="validationCustom05" class="form-label">Pincode</label>
+                        <input type="text" class="form-control" id="pincode" name="pincode" [(ngModel)]="orderL.pincode"
+                          required>
+
+                      </div>
+
+                      <div class="modal-footer">
+
+                        <!-- [routerLink]="['/orders']" -->
+                        <button type="submit" class="btn btn-primary" [disabled]="!form.valid"
+                          >Save changes</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- update code for packages for admindashboard-->
+            <!-- Modal -->
+            <!-- <div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Update Package</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+  
+                      <form method="post" #form="ngForm" (ngSubmit)="UpdatePackage(orderL)">
+  
+                        <div class="form-group">
+                          <label for="validationCustom02" class="form-label"> Id</label>
+                          <input type="text" class="form-control" name="id" [(ngModel)]="orderL.id"
+                            value="{{orderL.id}}">
+                        </div>
+  
+                        <div class="    form-group">
+                          <label for="validationCustom01" class="form-label">Name</label>
+                          <input type="text" class="form-control" name="name" [(ngModel)]="orderL.washingInstructions"
+                            value="{{orderL.washingInstructions}}">
+  
+                        </div>
+
+  
+                        <div class=" form-group">
+                          <label for="validationCustom05" class="form-label">price</label>
+                          <input type="text" class="form-control" name="price" [(ngModel)]="orderL.date"
+                            [(ngModel)]="orderL.date">
+  
+                        </div>
+  
+                        <div class="form-group">
+                          <label for="validationCustom05" class="form-label">Status</label>
+                          <input type="text" class="form-control" name="status" [(ngModel)]="orderL.status"
+                            value="orderL.status">
+  
+                        </div>
+  
+                        <div class="modal-footer">
+  
+                          <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div> -->
+            <br>
+
+            <!-- <div class="rowcontent" style="padding-top: 2%;">
+            <div class="container">
+              <div class="row content">
+                <div class="boxContainer">
+                           <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>
+                            <h4> Order Id</h4>
+                          </th>
+                          <th>
+                            <h4>Washing Instructions</h4>
+                          </th>
+                          <th>
+                            <h4>Date</h4>
+                          </th>
+                          <th>
+                            <h4>Status</h4>
+                          </th>
+                          <th>
+                            <h4>Package Name</h4>
+                          </th>
+                          <th>
+                            <h4>Description</h4>
+                          </th>
+                          <th>
+                              <h4>Price</h4>
+                          </th>
+                          <th>
+                              <h4>City</h4>
+                          </th>
+                          <th>
+                              <h4>Pincode</h4>
+                          </th>   
+          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let ord of packages">
+                          <td>
+                            {{ord.id}}
+                          </td>
+                          <td>
+                            {{ord.washingInstructions}}
+                          </td>
+                          <td>
+                            {{ord.date}}
+                          </td>
+                          <td>
+                              {{ord.status}}
+                            </td>
+                            <td>
+                              {{ord.packageName}}
+                            </td>
+                            <td>
+                              {{ord.description}}
+                            </td>
+                            <td>
+                              {{ord.price}}
+                            </td>
+                          <td>
+                            {{ord.city}}
+                          </td>
+                          <td>
+                              {{ord.pincode}}
+                            </td>
+                    <button type="button" class="btn btn-primary "  id=edit data-bs-toggle="modal" data-bs-target="#exampleModel"
+                      (click)="SetPackageValues(pac)"><i class="fa-solid fa-pen-to-square"></i></button> 
+  
+                     <button type="button" class="btn btn-danger"   id=delete (click)="DeletePackage(pac)"><i
+                        class="fa-solid fa-person-circle-minus"></i></button> 
+                  
+  
+                </tr> -->
+            <!-- </tbody>
+  
+            </table> -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>

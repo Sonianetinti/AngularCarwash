@@ -14,6 +14,9 @@ export class PackageService {
   GetPackageModels(): Observable<PackageModel[]> {
     return this.http.get<PackageModel[]>(this.rootUrl);
   }
+  getPackagebyId(id:number){
+    return this.http.get<PackageModel[]>(`${this.rootUrl}` + id);
+  }
 
   // AddPackageModels(PackageModel: PackageModel): Observable<PackageModel> {
   //   return this.http.post<PackageModel>(this.rootUrl, PackageModel);

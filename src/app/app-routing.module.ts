@@ -13,7 +13,8 @@ import { UserdetailsComponent } from './component/userdetails/userdetails.compon
 import { PackageComponent } from './component/package/package.component';
 import { CardetilsComponent } from './component/cardetils/cardetils.component';
 import { OrdersComponent } from './component/orders/orders.component';
-import { OrderdetailsComponent } from './component/orderdetails/orderdetails.component';
+import { AddOrderComponent } from './component/add-order/add-order.component';
+
 
 
 
@@ -30,7 +31,7 @@ const routes: Routes = [
   {path:"package",component:PackageComponent},
   {path:"cardetils",component:CardetilsComponent},
   {path:"orders",component:OrdersComponent},
-  {path:"orderdetails",component:OrderdetailsComponent},
+  {path:"add-order/:id",component:AddOrderComponent},
   {path:"packages",component:PackagesComponent,canActivate:[AuthGuard]},
 
 ];

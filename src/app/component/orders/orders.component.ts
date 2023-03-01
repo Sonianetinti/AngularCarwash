@@ -17,8 +17,8 @@ export class OrdersComponent {
     date:'',
     status:'',
     packageName:'',
-    description:'',
-    price:0,
+    name: '',
+    price: 0,
     city:'',
     pincode:0,
   };
@@ -40,7 +40,6 @@ export class OrdersComponent {
     (this.orderL.date = order.date),
     (this.orderL.status = order.status),
     (this.orderL.packageName= order.packageName),
-    (this.orderL.description= order.description),
     (this.orderL.price = order.price),
     (this.orderL.city = order.city),
     (this.orderL.pincode= order.pincode);

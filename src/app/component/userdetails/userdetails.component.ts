@@ -17,8 +17,8 @@ export class UserdetailsComponent implements OnInit {
     lastName:'',
     phoneNo:0,
     email:'',
-    // password:'',
-    // confirmPassword:'',
+    password:'',
+    confirmPassword:'',
     address:'',
     role:'',
     status:'',
@@ -41,8 +41,11 @@ export class UserdetailsComponent implements OnInit {
       (this.userL.lastName = user.lastName),
       (this.userL.phoneNo = user.phoneNo),
       (this.userL.email = user.email),
+      (this.userL.password= user.password),
+      (this.userL.confirmPassword = user.confirmPassword),
       (this.userL.address = user.address),
       (this.userL.role = user.role),
+      
 
 
       (this.userL.status = user.status);
@@ -78,6 +81,7 @@ export class UserdetailsComponent implements OnInit {
   }
 
   UpdateUser(usercord: UserModel) {
+    console.log('UPDATE USER', usercord.userId, usercord)
     this.user.UpdateUserModel(usercord.userId, usercord).subscribe((data) => {
       console.log(data);
       this.getAllUsers();
@@ -87,11 +91,11 @@ export class UserdetailsComponent implements OnInit {
     // this.toastr.success('Drug was Updated');
 
     //function to delay the code for 3 seconds to show the message
-    function delay(time: any) {
-      return new Promise((resolve) => setTimeout(resolve, time));
-    }
+    // function delay(time: any) {
+    //   return new Promise((resolve) => setTimeout(resolve, time));
+    // }
 
-    delay(4000).then(() => console.log('ran after 1 second1 passed'));
+    // delay(4000).then(() => console.log('ran after 1 second1 passed'));
 
     location.reload();
   }
