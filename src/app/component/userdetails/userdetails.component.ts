@@ -41,8 +41,9 @@ export class UserdetailsComponent implements OnInit {
       (this.userL.lastName = user.lastName),
       (this.userL.phoneNo = user.phoneNo),
       (this.userL.email = user.email),
-      // (this.userL.password = user.password),
-      // (this.userL.confirmPassword = user.confirmPassword),
+      (this.userL.address = user.address),
+      (this.userL.role = user.role),
+
 
       (this.userL.status = user.status);
   }
@@ -55,24 +56,7 @@ export class UserdetailsComponent implements OnInit {
     });
   }
 
-  //Method to add drug
-  // onSubmit() {
-  //    console.log(this.userL);
-  //   this.user.AddUserModels(this.userL).subscribe((Response) => {
-  //     console.log(Response);
-  //   });
-  //   // this.toastr.success('Drug added');
-  //   this.getAllUsers();
-
-  //   //function to delay the code for 3 seconds to show the message
-  //   function delay(time: any) {
-  //     return new Promise((resolve) => setTimeout(resolve, time));
-  //   }
-
-  //   delay(4000).then(() => console.log('ran after 1 second1 passed'));
-
-  //   location.reload();
-  // }
+ 
 
   // Method to delete a drug.
   DeleteUser(user: UserModel) { 

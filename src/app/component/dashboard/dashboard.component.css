@@ -4,9 +4,16 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(to top,#0aec3b 50%, #cbe669 90%)no-repeat;
-    background-image: url('../../../assets/Images/about.jpg');
+    /* background-image: url('../../../assets/Images/dashboard.jpg');
+    background-position: center top;
+    background-size: cover; */
+    background-image: url(../../../assets/Images/dashboard.jpg);
+    height: 800px;
     background-position: center top;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 
 }
@@ -90,3 +97,5 @@ img{
   .card-group .card {
       border-radius: 0.5rem;
   }
+
+  

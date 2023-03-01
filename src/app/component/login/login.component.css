@@ -3,11 +3,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to top,#c9c9ff 50%, #6e6ef6 90%)no-repeat;
-    /* background-image: url("src\assets\Images\home.jpg");
+    /* background: linear-gradient(to top,#c9c9ff 50%, #6e6ef6 90%)no-repeat; */
+    background-image: url("src\assets\Images\car.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative; */
+    position: relative; 
 }
 .panel-heading{
     text-align:center;

@@ -44,59 +44,6 @@ export class PackageComponent {
     });
   }
 
-  //Method to add drug
-  // onSubmit() {
-  //   console.log(this.packageL);
-  //   this.pack.AddPackageModels(this.packageL).subscribe((Response) => {
-  //     console.log(Response);
-  //   });
-  //   // this.toastr.success('Drug added');
-  //   this.getAllPackages();
-
-  //   //function to delay the code for 3 seconds to show the message
-  //   function delay(time: any) {
-  //     return new Promise((resolve) => setTimeout(resolve, time));
-  //   }
-
-  //   delay(4000).then(() => console.log('ran after 1 second1 passed'));
-
-  //   location.reload();
-  // }
-
-  // // Method to delete a drug.
-  // DeletePackage(pack: PackageModel) { 
-  //   this.pack.DeletePackageModel(pack.id).subscribe((data) => {
-  //     //console.log(data);
-  //     this.getAllPackages();
-  //   });
-  //   // this.toastr.success('Drug was deleted');
-
-  //   //function to delay the code for 3 seconds to show the message
-  //   function delay(time: any) {
-  //     return new Promise((resolve) => setTimeout(resolve, time));
-  //   }
-
-  //   delay(4000).then(() => console.log('ran after 1 second1 passed'));
-
-  //   location.reload();
-  // }
-
-  // UpdatePackage(packagerecord: PackageModel) {
-  //   this.pack.UpdatePackageModel(packagerecord.id, packagerecord).subscribe((data) => {
-  //     console.log(data);
-  //   });
-
-  //   // this.toastr.success('Drug was Updated');
-
-  //   //function to delay the code for 3 seconds to show the message
-  //   function delay(time: any) {
-  //     return new Promise((resolve) => setTimeout(resolve, time));
-  //   }
-
-  //   delay(4000).then(() => console.log('ran after 1 second1 passed'));
-
-  //   location.reload();
-  // }
 
   LogOut() {
     localStorage.removeItem('');

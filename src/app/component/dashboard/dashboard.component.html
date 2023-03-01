@@ -1,7 +1,7 @@
 <header>
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-            <button (click)="logout()" class="btn btn-danger">LogOut</button>
+            <button (click)="logout()" class="btn btn-primary">LogOut</button>
         </div>
     </div>
 </header>
@@ -9,28 +9,25 @@
     <div class="container">
         <div class="card-group ">
             <ng-container *ngIf="role==='Admin' || role==='admin'">
-                <div class="card bg-info">
+                <div class="card bg-primary">
                     <div class="card-body text-center" >
-                        <h2 class="card-title">Car Package</h2>
+                        <h2 class="card-title">Package Management</h2>
                     </div>
                     <div class="card-footer text-center">
                         <a href="packages"  class="text-dark ">Get Started</a>
                     </div>
                 </div>
-                <div class="card bg-info">
+                <div class="card bg-primary">
                     <div class="card-body text-center">
-                        <h2 class="card-title">Car Details</h2>
-                        
-                            
-                        
+                        <h2 class="card-title">Car Management</h2>      
                     </div>
                     <div class="card-footer text-center">
                         <a href="car"  class="text-dark">Get Started</a>
                     </div>
                 </div>
-                <div class="card bg-info">
+                <div class="card bg-primary">
                     <div class="card-body text-center">
-                        <h2 class="card-title">User Details</h2>
+                        <h2 class="card-title">User Management</h2>
                         
                     </div>
                     <div class="card-footer text-center">
@@ -38,107 +35,106 @@
                         <!-- <a class="text-dark">Get Started</a> -->
                     </div>
                 </div>
+                <div class="card bg-primary">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Order Management</h2>      
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="orders"  class="text-dark">Get Started</a>
+                    </div>
+                </div>
+                <div class="card bg-primary">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Washer Management</h2>      
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="order"  class="text-dark">Get Started</a>
+                    </div>
+                </div>
             </ng-container>
 
             <ng-container *ngIf="role==='Customer'||role==='customer'">
 
-                <div class="card">
+                <div class="card bg-primary">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Car Packages</h5>
+                        <h2 class="card-title">Package Managements</h2>
                     </div>
                     <div class="card-footer text-center">
-                        <a href="package"  class="text-muted">Get Started</a>
+                        <a href="package"  class="text-dark">Get Started</a>
                         <!-- <a class="text-muted">Get Started</a> -->
                     </div>
                 </div>
+
+                <div class="card bg-primary">
+                    <div class="card-footer text-center">
+                        <h2 class="card-title">Car Management</h2>
+                        
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="cardetils"  class="text-dark">Get Started</a>
+                        <!-- <a class="text-dark">Get Started</a> -->
+                    </div>
+                </div>
+
+                <div class="card bg-primary">
+                    <div class="card-footer text-center">
+                        <h2 class="card-title">Order Management</h2>
+                        
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="orderdetails"  class="text-dark">Get Started</a>
+                        <!-- <a class="text-dark">Get Started</a> -->
+                    </div>
+                </div>
             </ng-container>
 
 
-        </div>
+            <ng-container *ngIf="role==='CarWasher'||role==='carwasher'">
 
-    </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <header>
-<div class="navbar-nav">
-    <div class="nav-item text-nowrap">
-        <button (click)="logout()" class="btn btn-danger">LogOut</button>
-    </div>
-</div>
-</header>
-    <div class="outer">
-        <div class="container">
-            <div class="row">
-                <ng-container *ngIf="role==='Admin'">
-                <div class="offset-lf-2 col-lg-4 col-lf-7 offset-lf-4 offset-lf-3">
-                    <div class="panel border bg-white">
-                        <div class="panel-heading">
-                            <h3 class="pt-3 font-weight-bold">CarPackage</h3>
-                        </div>
+                <div class="card bg-primary">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Order Management</h2>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="orders"  class="text-dark">Get Started</a>
+                        
                     </div>
                 </div>
-                <div class="offset-lf-2 col-lg-4 col-lf-7 offset-lf-4 offset-lf-3">
-                    <div class="panel border bg-white">
-                        <div class="panel-heading">
-                            <h3 class="pt-3 font-weight-bold">CarDetails</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="offset-lf-2 col-lg-4 col-lf-7 offset-lf-4 offset-lf-5">
-                    <div class="panel border bg-white">
-                        <div class="panel-heading">
-                            <h3 class="pt-3 font-weight-bold">User Details</h3>
-                        </div>
-                    </div>
-                    </div>
 
-            </ng-container>
-
-            <ng-container *ngIf="role==='Customer'||role==='customer'">
-                <div class="offset-lf-2 col-lg-4 col-lf-7 offset-lf-4 offset-lf-3">
-                    <div class="panel border bg-white">
-                        <div class="panel-heading">
-                            <h3 class="pt-3 font-weight-bold">CarDetails</h3>
-                        </div>
-                    </div>
-                    
-                </div>
                 
             </ng-container>
-            
-                </div>
-               
-            </div>
-            
+
+
         </div>
-        
-        
-     -->
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

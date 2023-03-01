@@ -11,6 +11,10 @@ import { CarComponent } from './component/car/car.component';
 import { PackagesComponent } from './component/packages/packages.component';
 import { UserdetailsComponent } from './component/userdetails/userdetails.component';
 import { PackageComponent } from './component/package/package.component';
+import { CardetilsComponent } from './component/cardetils/cardetils.component';
+import { OrdersComponent } from './component/orders/orders.component';
+import { OrderdetailsComponent } from './component/orderdetails/orderdetails.component';
+
 
 
 
@@ -24,6 +28,9 @@ const routes: Routes = [
   {path:"car",component:CarComponent},
   {path:"userdetails",component:UserdetailsComponent},
   {path:"package",component:PackageComponent},
+  {path:"cardetils",component:CardetilsComponent},
+  {path:"orders",component:OrdersComponent},
+  {path:"orderdetails",component:OrderdetailsComponent},
   {path:"packages",component:PackagesComponent,canActivate:[AuthGuard]},
 
 ];
