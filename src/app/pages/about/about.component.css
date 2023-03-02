@@ -1,18 +1,18 @@
 .banner {
-    background-image: url(src\assets\Images\login.jpg);
+    background-image: url(src\assets\Images\home1.jpg);
     height: 800px;
     background-position: center top;
     background-size: cover;}
 
 .content {
-    top: 30%;
-    left: 20%;
+    top: 10%;
+    left: 10%;
     position: absolute;
     font-size: 200%;
 }
 
 .content h1 {
-    color: blue;
+    color:red;
     font-size: 50px;
     font-weight: bold;
 }

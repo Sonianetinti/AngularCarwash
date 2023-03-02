@@ -25,6 +25,12 @@ import { OrdersComponent } from './component/orders/orders.component';
 import { AddOrderComponent } from './component/add-order/add-order.component';
 
 import { ToastrModule } from 'ngx-toastr';
+import { OrderComponent } from './component/order/order.component';
+
+
+
+
+
 
 
 
@@ -51,6 +57,10 @@ import { ToastrModule } from 'ngx-toastr';
     CardetilsComponent,
     OrdersComponent,
     AddOrderComponent,
+    OrderComponent,
+
+    
+  
   ],
   imports: [
     BrowserModule,

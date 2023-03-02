@@ -1,110 +1,103 @@
 <div style="overflow: hidden;">
-    <div class="Container" style="color:whitesmoke; background-color: #0bc1f9; padding: 10px;">
-      <div class="row">
-        <div class="col-md-10">
-          <h1 style="color: black; text-align: center; margin-left: 30px;">Orders</h1>
-        </div>
-        <div class="col-md-2">
-          <button type="button" [routerLink]="['']" style="padding: 5px; width:80px; margin: 10px;"
-            class="btn btn-primary" (click)="LogOut()">Logout</button>
-          <button type="button" [routerLink]="['/dashboard']" style="padding: 5px; width:80px; margin: 10px;"
-            class="btn btn-primary">Back</button>
-  
-        </div>
+  <div class="Container" style="color:whitesmoke; background-color: #0bc1f9; padding: 10px;">
+    <div class="row">
+      <div class="col-md-10">
+        <h1 style="color: black; text-align: center; margin-left: 30px;">Orders</h1>
+      </div>
+      <div class="d-flex col-md-2">
+        <button type="button" [routerLink]="['']" style="padding: 5px; width:80px; margin: 10px;"
+          class="btn btn-primary" (click)="LogOut()">Logout</button>
+        <button type="button" [routerLink]="['/dashboard']" style="padding: 5px; width:80px; margin: 10px;"
+          class="btn btn-primary">Back</button>
       </div>
     </div>
-  
-  
-  
-  
-  
-    <div class="rowcontent" style="padding-top: 2%;">
-      <div class="container">
-        <div class="row content">
-          <div class="boxContainer bg-success">
-              <table class="table table-bordered text-white">
-                <thead>
-                  <tr>
-                    <th>
-                      <h4> Order Id</h4>
-                    </th>
-                    <th>
-                      <h4>Washing Instructions</h4>
-                    </th>
-                    <th>
-                      <h4>Date</h4>
-                    </th>
-                    <th>
-                      <h4>Status</h4>
-                    </th>
-                    <th>
-                      <h4>Package Name</h4>
-                    </th>
-                    <th>
-                        <h4>Price</h4>
-                    </th>
-                    <th>
-                        <h4>City</h4>
-                    </th>
-                    <th>
-                        <h4>Pincode</h4>
-                    </th>   
-    
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let ord of orders">
-                    <td>
-                      {{ord.id}}
-                    </td>
-                    <td>
-                      {{ord.washingInstructions}}
-                    </td>
-                    <td>
-                      {{ord.date}}
-                    </td>
-                    <td>
-                        {{ord.status}}
-                      </td>
-                      <td>
-                        {{ord.packageName}}
-                      </td>
-                      <td>
-                        {{ord.price}}
-                      </td>
-                    <td>
-                      {{ord.city}}
-                    </td>
-                    <td>
-                        {{ord.pincode}}
-                      </td>
+  </div>
 
-                    <!-- <td>
+  <div class="rowcontent" style="padding-top: 2%;">
+    <div class="container">
+      <div class="row content">
+        <div class="boxContainer bg-success">
+          <table class="table table-bordered text-white">
+            <thead>
+              <tr>
+                <th>
+                  <h4> Order Id</h4>
+                </th>
+                <th>
+                  <h4>Washing Instructions</h4>
+                </th>
+                <th>
+                  <h4>Date</h4>
+                </th>
+                <th>
+                  <h4>Status</h4>
+                </th>
+                <th>
+                  <h4>Package Name</h4>
+                </th>
+                <th>
+                  <h4>Price</h4>
+                </th>
+                <th>
+                  <h4>City</h4>
+                </th>
+                <th>
+                  <h4>Pincode</h4>
+                </th>
+                <th *ngIf="role==='Carwasher'||role==='carwasher'"></th>
+                <th *ngIf="role==='Carwasher'||role==='carwasher'"></th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let ord of orders">
+                <td>
+                  {{ord.id}}
+                </td>
+                <td>
+                  {{ord.washingInstructions}}
+                </td>
+                <td>
+                  {{ord.date}}
+                </td>
+                <td>
+                  {{ord.status}}
+                </td>
+                <td>
+                  {{ord.packageName}}
+                </td>
+                <td>
+                  {{ord.price}}
+                </td>
+                <td>
+                  {{ord.city}}
+                </td>
+                <td>
+                  {{ord.pincode}}
+                </td>
+                <td *ngIf="role==='Carwasher'||role==='carwasher'">
+                  <button (click)="onAcceptOrder(ord.id)" class="btn btn-primary">Accept</button>
+                </td>
+                <td *ngIf="role==='Carwasher'||role==='carwasher'">
+                  <button (click)="onRejectOrder(ord.id)" class="btn btn-danger">Reject</button>
+                </td>
+
+                <!-- <td>
                       <button type="button" id=edit data-bs-toggle="modal" data-bs-target="#exampleModel"
                         (click)="SetPackageValues(pac)"><i class="fa-solid fa-pen-to-square"></i></button> -->
-    
-                      <!-- <button type="button" id=delete (click)="DeletePackage(pac)"><i
+
+                <!-- <button type="button" id=delete (click)="DeletePackage(pac)"><i
                           class="fa-solid fa-person-circle-minus"></i></button> -->
-                    <!-- </td> -->
-    
-                  </tr>
-                </tbody>
-    
-              </table>
-          </div>
+                <!-- </td> -->
+
+              </tr>
+            </tbody>
+
+          </table>
         </div>
-  
       </div>
-  
+
     </div>
-    <!-- <div class="Container" id="footer"
-      style="color:rgb(0, 0, 0); text-align: center;  background-color: #0bc1f9; padding: 10px;">
-      <footer>
-        <span>
-          <strong>
-            On demand car wash System -
-          </strong>
-        </span>
-      </footer>
-    </div>
-  </div> -->
+
+  </div>
+</div>

@@ -62,16 +62,16 @@ export class AddOrderComponent implements OnInit {
     // //console.log(this.orders);
 
     // this.id = this.route.snapshot.params['id'];
-    this.Package.getPackagebyId(this.id).subscribe( data => {
+    this.Package.getPackagebyId(this.id).subscribe(data => {
 
       // const { id, name, status, price} = data;
-      console.log('ORDER',this.orderL)
+      console.log('ORDER', this.orderL)
 
       console.log('PACKAGE DATA', data)
       // this.packL=data;
       // this.packL.name = data['name'];
 
-      this.orderL = {...this.orderL, ...data}
+      this.orderL = { ...this.orderL, ...data }
 
       // this.orderL.packageName = this.packL.name;
       // this.orderL.price = this.packL.price;
@@ -98,42 +98,38 @@ export class AddOrderComponent implements OnInit {
 
   //Method to display all the drugs
   getAllOrders() {
-    this.pack.GetOrderModels().subscribe((response) => {
-      this.packages = response;
-      //console.log(this.drugs);
+    this.pack.GetOrderModels().subscribe((data) => {
+      this.orders = data;
+      console.log('1 GET ORDERS', data)
+
+
+
+      
+      window.location.href = `/order/${data[data?.length - 1]?.id}`;
+      alert('Order Placed successfully')
+      // this.toastr.success('Order has been placed successfully', 'Ordered');
     });
   }
 
   //Method to add drug
   onSubmit() {
-    console.log('SUBMIT',this.orderL);
-    this.pack.AddOrderModels({...this.orderL, packageName: this.orderL.name}).subscribe((Response) => {
-      console.log(Response);
+    console.log('SUBMIT', this.orderL);
+    this.pack.AddOrderModels({ ...this.orderL, packageName: this.orderL.name }).subscribe((data) => {
+      console.log('ADD ORDER RESPONSE', data);
+      // this.toastr.success('Order has been placed successfully', 'Ordered');
+      // });
 
-      this.toastr.success('Order has been placed successfully', 'Ordered');
-    });
-    // this.toastr.success('Drug added');
-    this.getAllOrders();
-
-
-    
-    window.location.href = '/orders';
-
-    // alert('Order has been placed')
+      this.getAllOrders();
+      // alert('Order has been placed')
+      // window.location.href = `/order/${this.id}`;
+    }, (error) => console.log('ADD ORDERS ERROR', error))
 
 
 
-    //function to delay the code for 3 seconds to show the message
-    // function delay(time: any) {
-    //   return new Promise((resolve) => setTimeout(resolve, time));
-    // }
 
-    // delay(4000).then(() => console.log('ran after 1 second1 passed'));
 
     // location.reload();
   }
-
-
 
   LogOut() {
     localStorage.removeItem('');

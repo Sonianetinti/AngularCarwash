@@ -8,6 +8,7 @@ import { PackageService } from 'src/app/services/package.service';
   templateUrl: './package.component.html',
   styleUrls: ['./package.component.css']
 })
+  
 export class PackageComponent {
   public packages:PackageModel[] = [];
 

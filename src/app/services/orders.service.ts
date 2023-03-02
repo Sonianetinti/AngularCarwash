@@ -15,6 +15,14 @@ export class OrdersService {
     return this.http.get<OrderModel[]>(this.rootUrl);
   }
 
+  GetOrderModelById(id: number): Observable<OrderModel> {
+    return this.http.get<OrderModel>(this.rootUrl + id);
+  }
+
+  UpdateOrderModel(id: number, OrderModel: OrderModel): Observable<OrderModel> {
+    return this.http.put<OrderModel>(this.rootUrl + id, OrderModel);
+  }
+  
   // AddOrderModels(OrderModel: OrderModel): Observable<OrderModel> {
   //   return this.http.post<OrderModel>(this.rootUrl, OrderModel);
   // }
@@ -23,13 +31,6 @@ export class OrdersService {
   //   return this.http.delete<OrderModel>(this.rootUrl + id);
   // }
 
-  // UpdateOrderModel(id: number, OrderModel: OrderModel): Observable<OrderModel> {
-  //   return this.http.put<OrderModel>(this.rootUrl+ id, OrderModel);
-  // }
-
-  // GetOrderModelById(id: number): Observable<OrderModel> {
-  //   return this.http.get<OrderModel>(this.rootUrl + '/api/Order' + id);
-  // }
 }
 
 
