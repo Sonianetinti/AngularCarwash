@@ -28,7 +28,7 @@ export class AddOrderComponent implements OnInit {
     id: 0,
     washingInstructions: '',
     date: '',
-    status: 'Accepted',
+    status: 'Pending',
     packageName: '',
     name: '',
     price: 0,
@@ -41,7 +41,7 @@ export class AddOrderComponent implements OnInit {
     id: 0,
     name: '',
     price: '',
-    status: 'Accepted',
+    status: 'Pending',
   };
 
   constructor(

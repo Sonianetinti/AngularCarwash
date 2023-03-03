@@ -16,7 +16,7 @@ export class OrderComponent {
     id: 0,
     washingInstructions: '',
     date: '',
-    status: 'Accepted',
+    status: 'Pending',
     packageName: '',
     name: '',
     price: 0,
