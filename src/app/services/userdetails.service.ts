@@ -15,6 +15,9 @@ export class UserdetailsService {
     return this.http.get<UserModel[]>(this.rootUrl);
   }
 
+  GetUserModelById(id: number): Observable<UserModel> {
+    return this.http.get<UserModel>(this.rootUrl + '/api/User' + id);
+  }
   // AddUserModels(UserModel: UserModel): Observable<UserModel> {
   //   return this.http.post<UserModel>(this.rootUrl+'register', UserModel);
   // }
@@ -27,9 +30,6 @@ export class UserdetailsService {
     return this.http.put<UserModel>(this.rootUrl+ id, UserModel);
   }
 
-  GetUserModelById(id: number): Observable<UserModel> {
-    return this.http.get<UserModel>(this.rootUrl + '/api/User' + id);
-  }
 }
 
 

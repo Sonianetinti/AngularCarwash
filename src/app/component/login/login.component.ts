@@ -1,69 +1,87 @@
-import { Component,OnInit } from '@angular/core';
-import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserStoreService } from 'src/app/services/user-store.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
-  type:string="password";
-  isText:boolean=false;
-  eyeIcon:string="fa-eye-slash";
-  loginForm!:FormGroup;
-  constructor(private fb:FormBuilder,private auth:AuthService,private router:Router,private userStore:UserStoreService){}
-    ngOnInit():void{
-        this.loginForm=this.fb.group({
-          Email:['',Validators.required],
-          Password:['',Validators.required]
-        })
-    }
-    hideShowPass(){
-      this.isText=!this.isText;
-      this.isText? this.eyeIcon="fa-eye":this.eyeIcon="fa-eye-slash";
-      this.isText? this.type="text":this.type="password";
-    }
-    onSubmit(){
-      if(this.loginForm.valid){
-        console.log(this.loginForm.value)
-        //Send the obj to database
-        this.auth.login(this.loginForm.value)
+
+export class LoginComponent implements OnInit {
+  type: string = "password";
+  isText: boolean = false;
+  eyeIcon: string = "fa-eye-slash";
+  loginForm!: FormGroup;
+
+  constructor(
+    private fb: FormBuilder,
+    private auth: AuthService,
+    private router: Router,
+    private userStore: UserStoreService,
+    private toastr: ToastrService,
+  ) { }
+
+  ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      Email: ['', Validators.required],
+      Password: ['', Validators.required]
+    })
+  }
+  hideShowPass() {
+    this.isText = !this.isText;
+    this.isText ? this.eyeIcon = "fa-eye" : this.eyeIcon = "fa-eye-slash";
+    this.isText ? this.type = "text" : this.type = "password";
+  }
+  onSubmit() {
+    if (this.loginForm.valid) {
+      console.log(this.loginForm.value)
+      //Send the obj to database
+      this.auth.login(this.loginForm.value)
         .subscribe({
-          next:(res=>{
-            alert(res.message);
+          next: (res => {
+            // alert(res.message);
+            console.log('LOGIN RESPONSE', res)
+            console.log('LOGIN FORM', this.loginForm.value)
+            localStorage.setItem('user', JSON.stringify(res.u))
+            this.toastr.success(res.message, 'Authenticated Successfully');
+
             this.loginForm.reset();
             this.auth.storeToken(res.token);
             const tokenPayload = this.auth.decodedToken();
             this.userStore.setFulNameForStore(tokenPayload.name);
             this.userStore.setRoleForStore(tokenPayload.role)
+            // this.auth.storeToken(JSON.stringify(this.loginForm))
             this.router.navigate(['dashboard']);
+            // localStorage.setItem('email', this.logi)
 
+            // localStorage.setItem('user', JSON.stringify(this.loginForm))
           })
-          ,error:(err=>{
+          , error: (err => {
             alert(err?.error.message)
           })
         })
-      }else{
-        
-        //throw the error using toaster and with required fields
-        this.validateAllFormFields(this.loginForm);
-        alert("Your form is invalid")
-      }
-    }
+    } else {
 
-    private validateAllFormFields(formGroup:FormGroup){
-      Object.keys(formGroup.controls).forEach(field=>{
-      const control = formGroup.get(field);
-      if(control instanceof FormControl){
-       control.markAsDirty({onlySelf:true});
-      }else if(control instanceof FormGroup){
-        this.validateAllFormFields(control)
-      }
-      })
+      //throw the error using toaster and with required fields
+      this.validateAllFormFields(this.loginForm);
+      alert("Your form is invalid")
     }
   }
+
+  private validateAllFormFields(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(field => {
+      const control = formGroup.get(field);
+      if (control instanceof FormControl) {
+        control.markAsDirty({ onlySelf: true });
+      } else if (control instanceof FormGroup) {
+        this.validateAllFormFields(control)
+      }
+    })
+  }
+}
 
 

@@ -59,6 +59,7 @@ export class UserdetailsComponent implements OnInit {
     });
   }
 
+  
  
 
   // Method to delete a drug.

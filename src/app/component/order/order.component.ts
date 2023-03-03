@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { OrderModel } from 'src/app/models/orders.model';
 import { OrdersService } from 'src/app/services/orders.service';
-
+import { UserdetailsService } from 'src/app/services/userdetails.service';
 
 @Component({
   selector: 'app-order',
@@ -26,11 +26,15 @@ export class OrderComponent {
   id: any;
   printContents: any;
   originalContents: any;
+  userString: any
+  userData: any
 
   constructor(
     // private router: Router,
     private route: ActivatedRoute,
     private order: OrdersService,
+    private ordersList: OrdersService,
+    private user: UserdetailsService,
   ) {
     this.route.params.subscribe(params => {
       console.log('params', params)
@@ -42,8 +46,18 @@ export class OrderComponent {
     this.getOrder()
   }
 
+
+
   getOrder() {
     const id = this.id;
+
+    this.userString = localStorage.getItem('user')
+    this.userData = JSON.parse(this.userString)
+    console.log('SEND ORDER EMAIL REQUEST', this.userData.userId, this.userData.email)
+    this.ordersList.SendOrderEmail(id, this.userData).subscribe((data) => {
+      console.log('SEND ORDER EMAIL RESPONSE', data)
+    })
+
     this.order.GetOrderModelById(id).subscribe(data => {
       console.log('SINGLE ORDER', data)
 
@@ -51,6 +65,8 @@ export class OrderComponent {
 
     }, error => console.log(error))
   }
+
+
 
   DownloadOrder(cmpName: any) {
     // this.printContents = document.getElementById(cmpName).innerHTML;
